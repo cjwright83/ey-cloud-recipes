@@ -15,23 +15,23 @@ execute "tar" do
 end
 
 execute "symbolic link" do
-  not_if "test -d /usr/bin/jruby"
+  not_if "test -f /usr/bin/jruby"
   user "deploy"
   command "sudo ln -s /usr/lib/jruby-1.6.0/bin/jruby /usr/bin/jruby"
 end
 
 execute "install rails" do
-  command "jruby -S gem install rails -v=2.3.11"
+  command "sudo jruby -S gem install rails -v=2.3.11"
 end
 
 execute "gem install activerecord-jdbcmysql-adapter" do
-  command "jruby -S gem install activerecord-jdbcmysql-adapter -v=1.1.1"
+  command "sudo jruby -S gem install activerecord-jdbcmysql-adapter -v=1.1.1"
 end
 
 execute "gem install bunny" do
-  command "jruby -S gem install bunny -v=0.6.0"
+  command "sudo jruby -S gem install bunny -v=0.6.0"
 end
 
 execute "gem install json" do
-  command "jruby -S gem install json -v=1.5.1"
+  command "sudo jruby -S gem install json -v=1.5.1"
 end

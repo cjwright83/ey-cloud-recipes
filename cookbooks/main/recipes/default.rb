@@ -2,6 +2,7 @@ require_recipe 'tomcat'
 
 require_recipe 'databaseyml'
 
+require_recipe 'jruby'
 #execute "testing" do
 #  command %Q{
 #    echo "i ran at #{Time.now}" >> /root/cheftime
