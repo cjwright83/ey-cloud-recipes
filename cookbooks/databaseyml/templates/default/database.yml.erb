@@ -1,0 +1,6 @@
+<%= @node[:environment][:framework_env] %>:
+  adapter:   jdbcmysql
+  database:  <%= @app_name %>
+  username:  deploy
+  password:  <%= @db_pass %>
+  host:      <%= @node[:db_host] %>
